@@ -1,2 +1,6 @@
+core.Microsoft*
+core.mongo*
+core.python*
 .venv
 env.py
+reviews/fixtures/
