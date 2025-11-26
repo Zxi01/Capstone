@@ -52,7 +52,7 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #188181;
+    background-color: #0242a1;
 }
 
 .scale {
@@ -60,8 +60,8 @@ body {
     height: auto;
 }
 
-.author {
-    color: white;
+.genre {
+    color: #ef05c8;
     margin: 4px;
     text-transform: uppercase;
 }

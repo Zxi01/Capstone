@@ -1,5 +1,6 @@
 body {
     background-color: #f9fafc;
+    color: #cfe9ff;
 }
 
 .brand {
@@ -7,6 +8,34 @@ body {
     font-size: 1.4rem;
     font-weight: 700;
     color: #4a4a4f;
+}
+
+.red-o {
+    color: #e84610;
+}
+
+.thin {
+    font-weight: 300;
+}
+
+.light-bg {
+    background-color: #fff;
+}
+
+.dark-bg {
+    background-color: #445261;
+}
+
+.main-bg {
+    /* Layered dark navy background to match the screenshot */
+    background-image:
+        linear-gradient(#071827 0%, #071827 12%, rgba(255,255,255,0.02) 12%, rgba(255,255,255,0.01) 13%),
+        radial-gradient(ellipse at 50% 8%, rgba(102,194,255,0.06), rgba(8,20,32,0.0) 30%),
+        linear-gradient(180deg, #021024 0%, #04172a 45%, #02121a 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #cfe9ff;
 }
 
 .card {
@@ -47,8 +76,8 @@ body {
 }
 
 .masthead-text {
-    background-color: #445261;
-    color: white;
+    background: linear-gradient(90deg, #081a2b 0%, #0b2740 100%);
+    color: #d8f0ff;
     position: relative;
 }
 
@@ -64,9 +93,7 @@ body {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
+    background: rgba(8,24,40,0.9);
     transform: skew(15deg);
     z-index: 100;
 }
@@ -78,7 +105,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: #e84610;
+    color: #bd069f;
 }
 
 .post-title {
@@ -90,6 +117,25 @@ body {
     margin-left: 5%;
     color: lightgray;
 }
+
+/* Navbar / header styling to blend with dark theme */
+.main-nav {
+    background: transparent;
+    border-bottom: 1px solid rgba(127,190,255,0.04);
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+}
+.site-brand {
+    color: #9fe3ff;
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-shadow: 0 6px 18px rgba(80,180,255,0.04);
+}
+.site-brand .thin { font-weight: 300; color: #bfeaff; }
+.site-tagline { color: rgba(191,234,255,0.65); }
+.navbar-toggler { border-color: rgba(191,234,255,0.08); }
+.navbar-toggler-icon { filter: invert(0.9) brightness(1.2); }
 
 .btn-signup,
 .btn-edit {
@@ -139,3 +185,52 @@ body {
 .approval {
     color: rgb(222, 146, 168);
 }
+
+/* Review detail styles (tuned to dark neon theme) */
+.review-header .review-title {
+    color: #9fe3ff;
+    font-size: 1.9rem;
+    margin-bottom: 0.4rem;
+    text-shadow: 0 2px 8px rgba(80,190,255,0.08);
+}
+.meta-box {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius: 8px;
+    color: #cfe9ff;
+    border: 1px solid rgba(127,190,255,0.06);
+}
+.rating-badge {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: linear-gradient(180deg,#1b4b6a,#0b3250);
+    color: #dff7ff;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(15,60,100,0.45), 0 0 18px rgba(80,180,255,0.08) inset;
+}
+.section-title {
+    color: #66c2ff;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    border-left: 3px solid rgba(102,194,255,0.08);
+    padding-left: 10px;
+}
+.section-body {
+    color: #cfe9ff;
+    line-height: 1.7;
+}
+.review-chip {
+    background: linear-gradient(180deg, rgba(11,43,69,0.45), rgba(11,43,69,0.25));
+    color: #bfeaff;
+    border-radius: 18px;
+    padding: 6px 10px;
+    margin-right: 6px;
+    display: inline-block;
+    box-shadow: 0 6px 16px rgba(6,18,30,0.6);
+    font-size: 0.85rem;
+}
+
+/* Minor layout tweaks */
+.card-body { background: linear-gradient(180deg, rgba(6,12,20,0.65), rgba(8,16,24,0.6)); border-radius: 10px; }
+.post-meta p { margin: 0 0 6px 0; }

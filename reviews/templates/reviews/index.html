@@ -12,8 +12,8 @@
                         <div class="card-body">
                             <div class="image-container">
                                 <div class="image-flash">
-                                    <p class="author">
-                                        Author: {{ post.author }}
+                                    <p class="genre">
+                                        Genre: {{ post.genre|cut:"`"|cut:"["|cut:"]" }}
                                     </p>
                                 </div>
                             </div>
