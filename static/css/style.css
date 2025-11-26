@@ -247,3 +247,10 @@ body {
 /* Minor layout tweaks */
 .card-body { background: linear-gradient(180deg, rgba(6, 103, 240, 0.65), rgba(8,16,24,0.6)); border-radius: 10px; }
 .post-meta p { margin: 0 0 6px 0; }
+
+/* Make comment icons white to match the theme */
+.fa-comments,
+.far.fa-comments,
+.comment-count {
+    color: #ffffff;
+}
