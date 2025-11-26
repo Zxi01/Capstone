@@ -25,6 +25,7 @@ class Post(models.Model):
     genre = models.JSONField(default=list, blank=True)
     rating = models.FloatField(null=True, blank=True)
     tags = models.JSONField(default=list, blank=True)
+    genres = models.ManyToManyField('genres.Genre', blank=True, related_name='posts')
 
     class Meta:
         ordering = ["-created_on"]

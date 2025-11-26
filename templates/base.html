@@ -62,6 +62,27 @@
                                 >Home</a
                             >
                         </li>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="{% url 'home' %}"
+                                id="genresDropdown"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                Genres
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="genresDropdown">
+                                {% for g in genre_list %}
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'home' %}?genre={{ g.slug }}">{{ g.name }}</a>
+                                </li>
+                                {% empty %}
+                                <li><span class="dropdown-item">No genres</span></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
                     </ul>
                     <span class="navbar-text text-muted site-tagline">
                         The Ultimate Gaming Reviews Hub
