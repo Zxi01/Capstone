@@ -52,7 +52,7 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #188181;
+    background-color: #0242a1;
 }
 
 .scale {
@@ -60,8 +60,8 @@ body {
     height: auto;
 }
 
-.author {
-    color: white;
+.genre {
+    color: #ef05c8;
     margin: 4px;
     text-transform: uppercase;
 }
@@ -100,11 +100,24 @@ body {
 
 .post-link {
     text-decoration: none;
-    color: #445261;
 }
 
-.post-link:hover,
-.page-link {
+/* Ensure card title and text are white by default, but inherit the
+   post-link hover color when the parent link is hovered/focused/active */
+.card-title {
+    color: #ffffff;
+}
+
+.card-text {
+    color: #ffffff;
+}
+
+.post-link:hover .card-title,
+.post-link:focus .card-title,
+.post-link:active .card-title,
+.post-link:hover .card-text,
+.post-link:focus .card-text,
+.post-link:active .card-text {
     color: #bd069f;
 }
 
@@ -232,5 +245,5 @@ body {
 }
 
 /* Minor layout tweaks */
-.card-body { background: linear-gradient(180deg, rgba(6,12,20,0.65), rgba(8,16,24,0.6)); border-radius: 10px; }
+.card-body { background: linear-gradient(180deg, rgba(6, 103, 240, 0.65), rgba(8,16,24,0.6)); border-radius: 10px; }
 .post-meta p { margin: 0 0 6px 0; }
