@@ -1,7 +1,9 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
 
 <!-- index.html content starts here -->
-<div class="container-fluid">
+<div class="container-fluid reviews-index">
     <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
@@ -11,6 +13,7 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
+                                <img src="{% static 'images/offline.jpg' %}" class="scale" alt="post image">
                                 <div class="image-flash">
                                     <p class="genre">
                                         Genre: {{ post.genre|cut:"`"|cut:"["|cut:"]" }}
