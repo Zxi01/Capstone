@@ -9,26 +9,6 @@ body {
     color: #4a4a4f;
 }
 
-.red-o {
-    color: #e84610;
-}
-
-.thin {
-    font-weight: 300;
-}
-
-.light-bg {
-    background-color: #fff;
-}
-
-.dark-bg {
-    background-color: #445261;
-}
-
-.main-bg {
-    background-color: #f9fafc;
-}
-
 .card {
     border: none;
     background-color: transparent;
