@@ -152,6 +152,11 @@ body {
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
 }
+
+/* Keep navbar above content when sticky */
+.main-nav {
+    z-index: 1030;
+}
 .site-brand {
     color: #9fe3ff;
     font-family: Lato, sans-serif;
