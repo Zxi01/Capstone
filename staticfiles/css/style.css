@@ -60,6 +60,20 @@ body {
     height: auto;
 }
 
+/* Slightly smaller thumbnail images on the index page */
+.reviews-index .image-container .scale {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+@media (max-width: 576px) {
+    .reviews-index .image-container .scale {
+        height: 120px;
+    }
+}
+
 .genre {
     color: #ef05c8;
     margin: 4px;
@@ -137,6 +151,11 @@ body {
     border-bottom: 1px solid rgba(127,190,255,0.04);
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
+}
+
+/* Keep navbar above content when sticky */
+.main-nav {
+    z-index: 1030;
 }
 .site-brand {
     color: #9fe3ff;
@@ -247,3 +266,36 @@ body {
 /* Minor layout tweaks */
 .card-body { background: linear-gradient(180deg, rgba(6, 103, 240, 0.65), rgba(8,16,24,0.6)); border-radius: 10px; }
 .post-meta p { margin: 0 0 6px 0; }
+
+/* Make comment icons white to match the theme */
+.fa-comments,
+.far.fa-comments,
+.comment-count {
+    color: #ffffff;
+}
+
+/* Thinner cards with more visual depth on the index */
+.reviews-index .col-md-6 {
+    display: flex;
+    align-items: stretch;
+}
+.reviews-index .card {
+    max-width: 520px;
+    margin: 0.6rem auto;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(2,12,28,0.65), 0 6px 18px rgba(8,24,40,0.45) inset;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.reviews-index .card-body {
+    padding: 1.1rem;
+}
+.reviews-index .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 60px rgba(2,12,28,0.75), 0 8px 26px rgba(8,24,40,0.55) inset;
+}
+
+@media (max-width: 768px) {
+    .reviews-index .card { max-width: none; margin: 0.5rem 0; }
+}
