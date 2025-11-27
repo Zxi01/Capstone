@@ -13,7 +13,12 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                <img src="{% static 'images/offline.jpg' %}" class="scale" alt="post image">
+                                {% if "placeholder" in post.featured_image.url %}
+                                <img class="card-img-top" src="{% static 'images/offline.jpg' %}"
+                                 alt="placeholder image">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                                {% endif %}
                                 <div class="image-flash">
                                     <p class="genre">
                                         Genre: {{ post.genre|cut:"`"|cut:"["|cut:"]" }}
