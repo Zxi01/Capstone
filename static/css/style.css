@@ -169,8 +169,7 @@ body {
 .navbar-toggler { border-color: rgba(191,234,255,0.08); }
 .navbar-toggler-icon { filter: invert(0.9) brightness(1.2); }
 
-.btn-signup,
-.btn-edit {
+.btn-signup {
     background-color: #188181;
     color: #fff;
 }
@@ -201,6 +200,71 @@ body {
 .btn-delete {
     color: #fff;
     background: #e84610;
+}
+
+/* Themed edit and delete buttons */
+.btn.btn-edit {
+    background: linear-gradient(180deg, #bd069f, #8a046f);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.45rem 0.9rem;
+    box-shadow: 0 10px 28px rgba(189,6,159,0.12), 0 2px 8px rgba(0,0,0,0.35) inset;
+}
+.btn.btn-edit:hover,
+.btn.btn-edit:focus,
+.btn.btn-edit:active {
+    background: #ffffff;
+    color: #bd069f;
+}
+
+.btn.btn-delete {
+    background: linear-gradient(180deg, #ff6b4a, #e84610);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.45rem 0.85rem;
+    box-shadow: 0 10px 30px rgba(232,70,16,0.12), 0 2px 8px rgba(0,0,0,0.35) inset;
+}
+.btn.btn-delete:hover,
+.btn.btn-delete:focus,
+.btn.btn-delete:active {
+    background: #ffffff;
+    color: #e84610;
+}
+
+/* Style for the delete confirmation modal to match the dark neon theme */
+.modal-content {
+    background: linear-gradient(180deg, rgba(4,12,20,0.72), rgba(6,18,30,0.62));
+    border: 1px solid rgba(127,190,255,0.06);
+    color: #cfe9ff;
+}
+.modal-header .modal-title {
+    color: #9fe3ff;
+}
+.modal-body {
+    color: #cfe9ff;
+}
+.modal-footer .btn-secondary {
+    background: transparent;
+    color: #bfeaff;
+    border: 1px solid rgba(191,234,255,0.06);
+}
+.modal-footer .btn-danger {
+    background: linear-gradient(180deg, #ff6b4a, #e84610);
+    color: #fff;
+    border: none;
+}
+
+/* Confirmation/approval message styling */
+.approval {
+    display: block;
+    background: linear-gradient(180deg, rgba(189,6,159,0.12), rgba(80,180,255,0.02));
+    color: #ffd9ee;
+    border-radius: 12px;
+    border: 1px solid rgba(189,6,159,0.12);
+    margin: 0 0 0.8rem 0;
+    max-width: fit-content;
 }
 
 .btn-like:hover,
