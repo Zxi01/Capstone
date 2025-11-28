@@ -32,7 +32,9 @@
                         <p class="mb-1"><strong>Developer:</strong>
                           {% if post.developer %}{{ post.developer }}{% elif extra and extra.developer %}{{ extra.developer }}{% else %}{{ post.author }}{% endif %}
                         </p>
-                        {% if extra and extra.release_date %}
+                        {% if post.release_date %}
+                        <p class="mb-0"><strong>Release Date:</strong> {{ post.release_date }}</p>
+                        {% elif extra and extra.release_date %}
                         <p class="mb-0"><strong>Release Date:</strong> {{ extra.release_date }}</p>
                         {% else %}
                         <p class="mb-0"><strong>Release Date:</strong> {{ post.created_on|date:"Y-m-d" }}</p>
@@ -52,11 +54,6 @@
                 <div class="section-body mb-3">{{ extra.content_html|safe }}</div>
                 {% elif post.excerpt %}
                 <h5 class="section-title mt-3">| Description</h5>
-                <div class="section-body mb-3">{{ post.excerpt }}</div>
-                {% endif %}
-
-                {% if post.excerpt %}
-                <h5 class="section-title">| Excerpt</h5>
                 <div class="section-body mb-3">{{ post.excerpt }}</div>
                 {% endif %}
 

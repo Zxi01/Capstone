@@ -21,7 +21,7 @@
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="genre">
-                                        Genre: {{ post.genre|cut:"`"|cut:"["|cut:"]" }}
+                                        Genre: {{ post.genre|cut:"`"|cut:"["|cut:"]"|cut:"'" }}
                                     </p>
                                 </div>
                             </div>

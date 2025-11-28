@@ -147,7 +147,8 @@ body {
 
 /* Navbar / header styling to blend with dark theme */
 .main-nav {
-    background: transparent;
+    /* Use a solid dark background so header is not transparent */
+    background: linear-gradient(90deg, #081a2b 0%, #0b2740 100%);
     border-bottom: 1px solid rgba(127,190,255,0.04);
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
@@ -155,7 +156,7 @@ body {
 
 /* Keep navbar above content when sticky */
 .main-nav {
-    z-index: 1030;
+    z-index: 999;
 }
 .site-brand {
     color: #9fe3ff;
