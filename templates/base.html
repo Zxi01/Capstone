@@ -87,6 +87,27 @@
                                 {% endfor %}
                             </ul>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="{% url 'home' %}"
+                                id="publishersDropdown"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                Publishers
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="publishersDropdown">
+                                {% for p in publisher_list %}
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'home' %}?publisher={{ p.slug }}">{{ p.name }}</a>
+                                </li>
+                                {% empty %}
+                                <li><span class="dropdown-item">No publishers</span></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
 	                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
