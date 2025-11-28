@@ -8,10 +8,15 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <h1 class="post-title">{{ post.title }}</h1>
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+                <p class="post-subtitle">{% if post.developer %}{{ post.developer }}{% elif extra and extra.developer %}{{ extra.developer }}{% else %}{{ post.author }}{% endif %} | {{ post.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src="{% static 'images/offline.jpg' %}" class="scale" alt="placeholder">
+                {% if "placeholder" in post.featured_image.url %}
+                <img class="card-img-top" src="{% static 'images/offline.jpg' %}"
+                alt="placeholder image">
+                {% else %}
+                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                 {% endif %}
             </div>
         </div>
     </div>
@@ -25,7 +30,7 @@
                     <h2 class="review-title">{{ post.title }}</h2>
                     <div class="meta-box mb-3 p-3 rounded">
                         <p class="mb-1"><strong>Developer:</strong>
-                            {% if extra and extra.developer %}{{ extra.developer }}{% else %}{{ post.author }}{% endif %}
+                          {% if post.developer %}{{ post.developer }}{% elif extra and extra.developer %}{{ extra.developer }}{% else %}{{ post.author }}{% endif %}
                         </p>
                         {% if extra and extra.release_date %}
                         <p class="mb-0"><strong>Release Date:</strong> {{ extra.release_date }}</p>
