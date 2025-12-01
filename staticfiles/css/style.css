@@ -10,13 +10,9 @@ body {
     color: #4a4a4f;
 }
 
-/* .red-o removed (unused) */
-
 .thin {
     font-weight: 300;
 }
-
-/* .light-bg removed (unused) */
 
 .dark-bg {
     background-color: #445261;

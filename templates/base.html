@@ -128,8 +128,28 @@
                 </div>
             </div>
         </nav>
-        <!-- displaying Django messages -->
-        <div class="container">
+                <!-- display active filters (genre / publisher) -->
+                {% if request.GET.genre or request.GET.publisher %}
+                <div class="container mt-2">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert bg-dark text-light border-0 mb-0 py-2">
+                                <strong>Filtering:</strong>
+                                {% if request.GET.genre %}
+                                    {% for g in genre_list %}{% if g.slug == request.GET.genre %} <span class="mx-1">Genre: <em>{{ g.name }}</em></span>{% endif %}{% endfor %}
+                                {% endif %}
+                                {% if request.GET.publisher %}
+                                    {% for p in publisher_list %}{% if p.slug == request.GET.publisher %} <span class="mx-1">Publisher: <em>{{ p.name }}</em></span>{% endif %}{% endfor %}
+                                {% endif %}
+                                <a href="{% url 'home' %}" class="btn btn-sm btn-outline-light ms-3">Clear</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- displaying Django messages -->
+                <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
             {% for message in messages %}
