@@ -1,23 +1,44 @@
+/* ==================================================
+   Cleaned & Reordered CSS - `static/css/style.css`
+   Sections: Base, Typography, Colors/Backgrounds, Navbar,
+   Masthead, Cards, Index Layout, Review Detail, Buttons,
+   Modals, Utilities, Responsive
+   ================================================== */
+
+/* --------------------
+   Base
+   -------------------- */
 body {
     background-color: #f9fafc;
     color: #cfe9ff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+/* --------------------
+   Typography / Brand
+   -------------------- */
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: #4a4a4f;
 }
-
-.thin {
-    font-weight: 300;
+.thin { font-weight: 300; }
+.site-brand {
+    color: #c9f7ff;
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-shadow: 0 6px 18px rgba(80,180,255,0.04);
 }
+.site-brand .thin { font-weight: 300; color: #def8ff; }
+.site-tagline { color: rgba(191,234,255,0.85); }
 
-.dark-bg {
-    background-color: #445261;
-}
-
+/* --------------------
+   Colors / Backgrounds
+   -------------------- */
+.dark-bg { background-color: #445261; }
 .main-bg {
     background-image:
         linear-gradient(#0b2230 0%, #071827 12%, rgba(255,255,255,0.03) 12%, rgba(255,255,255,0.02) 13%),
@@ -29,29 +50,21 @@ body {
     color: #cfe9ff;
 }
 
-.card {
-    border: none;
-    background-color: transparent;
+/* --------------------
+   Navbar / Header
+   -------------------- */
+.main-nav {
+    background: linear-gradient(90deg, #091f31 0%, #0d3046 100%);
+    border-bottom: 1px solid rgba(127,190,255,0.10);
+    padding: 0.6rem 0;
+    z-index: 999;
 }
+.navbar-toggler { border-color: rgba(255,254,254,0.08); }
+.navbar-toggler-icon { filter: none; }
 
-.image-container {
-    position: relative;
-}
-
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #0242a1;
-}
-
-.genre {
-    color: #ffffff;
-    margin: 4px;
-    text-transform: uppercase;
-}
-
+/* --------------------
+   Masthead / Hero
+   -------------------- */
 .masthead {
     margin-top: 10px;
     overflow: hidden;
@@ -60,18 +73,12 @@ body {
     height: 33vh;
     width: 100%;
 }
-
 .masthead-text {
     background: linear-gradient(90deg, #081a2b 0%, #0b2740 100%);
     color: #d8f0ff;
     position: relative;
 }
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
+.masthead-image { position: relative; overflow: hidden; }
 .masthead-image:after {
     content: "";
     position: absolute;
@@ -84,225 +91,34 @@ body {
     z-index: 100;
 }
 
-.post-link {
-    text-decoration: none;
+/* --------------------
+   Cards / Posts
+   -------------------- */
+.card {
+    border: none;
+    background-color: transparent;
 }
-
-/* Ensure card title and text are white by default, but inherit the
-   post-link hover color when the parent link is hovered/focused/active */
-.card-title {
-    color: #ffffff;
-}
-
-.card-text {
-    color: #ffffff;
-}
-
+.card-title { color: #ffffff; }
+.card-text  { color: #ffffff; }
+.post-link { text-decoration: none; }
 .post-link:hover .card-title,
 .post-link:focus .card-title,
 .post-link:active .card-title,
 .post-link:hover .card-text,
 .post-link:focus .card-text,
-.post-link:active .card-text {
-    color: #bd069f;
-}
-
-.post-title {
-    margin-top: 10%;
-    margin-left: 5%;
-}
-
-.post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
-}
-
-/* Navbar / header styling to blend with dark theme */
-.main-nav {
-    /* Use a solid dark background so header is not transparent */
-    background: linear-gradient(90deg, #091f31 0%, #0d3046 100%);
-    border-bottom: 1px solid rgba(127,190,255,0.10);
-    padding-top: 0.6rem;
-    padding-bottom: 0.6rem;
-}
-
-/* Keep navbar above content when sticky */
-.main-nav {
-    z-index: 999;
-}
-.site-brand {
-    color: #c9f7ff;
-    font-family: Lato, sans-serif;
-    font-weight: 700;
-    font-size: 1.3rem;
-    text-shadow: 0 6px 18px rgba(80,180,255,0.04);
-}
-.site-brand .thin { font-weight: 300; color: #def8ff; }
-.site-tagline { color: rgba(191,234,255,0.85); }
-.navbar-toggler { border-color: rgba(255, 254, 254, 0.08); }
-.navbar-toggler-icon { filter: none; }
-
-.btn-signup {
-    background-color: #188181;
-    color: #fff;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #fff;
-    color: #23bbbb;
-}
-
-.link {
-    color: #23bbbb;
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: #445261;
-    text-decoration: underline;
-}
-
-.btn-delete {
-    color: #fff;
-    background: #e84610;
-}
-
-/* Themed edit and delete buttons */
-.btn.btn-edit {
-    background: linear-gradient(180deg, #bd069f, #8a046f);
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    padding: 0.45rem 0.9rem;
-    box-shadow: 0 10px 28px rgba(189,6,159,0.12), 0 2px 8px rgba(0,0,0,0.35) inset;
-}
-.btn.btn-edit:hover,
-.btn.btn-edit:focus,
-.btn.btn-edit:active {
-    background: #ffffff;
-    color: #bd069f;
-}
-
-.btn.btn-delete {
-    background: linear-gradient(180deg, #ff6b4a, #e84610);
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    padding: 0.45rem 0.85rem;
-    box-shadow: 0 10px 30px rgba(232,70,16,0.12), 0 2px 8px rgba(0,0,0,0.35) inset;
-}
-.btn.btn-delete:hover,
-.btn.btn-delete:focus,
-.btn.btn-delete:active {
-    background: #ffffff;
-    color: #e84610;
-}
-
-/* Style for the delete confirmation modal to match the dark neon theme */
-.modal-content {
-    background: linear-gradient(180deg, rgba(4,12,20,0.72), rgba(6,18,30,0.62));
-    border: 1px solid rgba(127,190,255,0.06);
-    color: #cfe9ff;
-}
-.modal-header .modal-title {
-    color: #9fe3ff;
-}
-.modal-body {
-    color: #cfe9ff;
-}
-.modal-footer .btn-secondary {
-    background: transparent;
-    color: #bfeaff;
-    border: 1px solid rgba(191,234,255,0.06);
-}
-.modal-footer .btn-danger {
-    background: linear-gradient(180deg, #ff6b4a, #e84610);
-    color: #fff;
-    border: none;
-}
-
-/* Confirmation/approval message styling */
-.approval {
-    display: block;
-    background: linear-gradient(180deg, rgba(189,6,159,0.12), rgba(80,180,255,0.02));
-    color: #ffd9ee;
-    border-radius: 12px;
-    border: 1px solid rgba(189,6,159,0.12);
-    margin: 0 0 0.8rem 0;
-    max-width: fit-content;
-}
-
-.faded {
-    color: rgb(172, 175, 175);
-}
-
-.approval {
-    color: rgb(222, 146, 168);
-}
-
-/* Review detail styles (tuned to dark neon theme) */
-.review-header .review-title {
-    color: #9fe3ff;
-    font-size: 1.9rem;
-    margin-bottom: 0.4rem;
-    text-shadow: 0 2px 8px rgba(80,190,255,0.08);
-}
-.meta-box {
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border-radius: 8px;
-    color: #cfe9ff;
-    border: 1px solid rgba(127,190,255,0.06);
-}
-.rating-badge {
-    display: inline-block;
-    padding: 10px 16px;
-    border-radius: 8px;
-    background: linear-gradient(180deg,#1b4b6a,#0b3250);
-    color: #dff7ff;
-    font-weight: 700;
-    box-shadow: 0 8px 24px rgba(15,60,100,0.45), 0 0 18px rgba(80,180,255,0.08) inset;
-}
-.section-title {
-    color: #66c2ff;
-    font-weight: 700;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    border-left: 3px solid rgba(102,194,255,0.08);
-    padding-left: 10px;
-}
-.section-body {
-    color: #e6fbff;
-    line-height: 1.7;
-}
-.review-chip {
-    background: linear-gradient(180deg, rgba(11,43,69,0.45), rgba(11,43,69,0.25));
-    color: #bfeaff;
-    border-radius: 18px;
-    padding: 6px 10px;
-    margin-right: 6px;
-    display: inline-block;
-    box-shadow: 0 6px 16px rgba(6,18,30,0.6);
-    font-size: 0.85rem;
-}
-
-/* Minor layout tweaks */
-.card-body { background: linear-gradient(180deg, rgba(6, 120, 255, 0.72), rgba(10,22,34,0.68)); border-radius: 10px; }
+.post-link:active .card-text { color: #bd069f; }
+.post-title { margin-top: 10%; margin-left: 5%; }
+.post-subtitle { margin-left: 5%; color: lightgray; }
+.image-container { position: relative; }
+.image-flash { position: absolute; bottom: 5%; min-width: 30%; left: -2px; background-color: #0242a1; }
+.genre { color: #ffffff; margin: 4px; text-transform: uppercase; }
+.card-body { background: linear-gradient(180deg, rgba(6,120,255,0.72), rgba(10,22,34,0.68)); border-radius: 10px; }
 .post-meta p { margin: 0 0 6px 0; }
 
-/* Make comment icons white to match the theme */
-.fa-comments,
-.far.fa-comments,
-.comment-count {
-    color: #ffffff;
-}
-
-/* Thinner cards with more visual depth on the index */
-.reviews-index .col-md-6 {
-    display: flex;
-    align-items: stretch;
-}
+/* --------------------
+   Index layout (reviews list)
+   -------------------- */
+.reviews-index .col-md-6 { display: flex; align-items: stretch; }
 .reviews-index .card {
     max-width: 520px;
     margin: 0.6rem auto;
@@ -312,14 +128,53 @@ body {
     box-shadow: 0 18px 40px rgba(2,12,28,0.65), 0 6px 18px rgba(8,24,40,0.45) inset;
     transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
-.reviews-index .card-body {
-    padding: 1.1rem;
-}
-.reviews-index .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 28px 60px rgba(2,12,28,0.75), 0 8px 26px rgba(8,24,40,0.55) inset;
-}
+.reviews-index .card-body { padding: 1.1rem; }
+.reviews-index .card:hover { transform: translateY(-8px); box-shadow: 0 28px 60px rgba(2,12,28,0.75), 0 8px 26px rgba(8,24,40,0.55) inset; }
 
+/* --------------------
+   Review detail
+   -------------------- */
+.review-header .review-title { color: #9fe3ff; font-size: 1.9rem; margin-bottom: 0.4rem; text-shadow: 0 2px 8px rgba(80,190,255,0.08); }
+.meta-box { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius: 8px; color: #cfe9ff; border: 1px solid rgba(127,190,255,0.06); }
+.rating-badge { display: inline-block; padding: 10px 16px; border-radius: 8px; background: linear-gradient(180deg,#1b4b6a,#0b3250); color: #dff7ff; font-weight: 700; box-shadow: 0 8px 24px rgba(15,60,100,0.45), 0 0 18px rgba(80,180,255,0.08) inset; }
+.section-title { color: #66c2ff; font-weight: 700; margin-top: 1rem; margin-bottom: 0.5rem; border-left: 3px solid rgba(102,194,255,0.08); padding-left: 10px; }
+.section-body { color: #e6fbff; line-height: 1.7; }
+.review-chip { background: linear-gradient(180deg, rgba(11,43,69,0.45), rgba(11,43,69,0.25)); color: #bfeaff; border-radius: 18px; padding: 6px 10px; margin-right: 6px; display: inline-block; box-shadow: 0 6px 16px rgba(6,18,30,0.6); font-size: 0.85rem; }
+
+/* --------------------
+   Buttons
+   -------------------- */
+.btn-signup { background-color: #188181; color: #fff; }
+.btn-signup:hover, .btn-signup:active { background-color: #fff; color: #23bbbb; }
+.link { color: #23bbbb; text-decoration: none; }
+.link:hover, .link:active { color: #445261; text-decoration: underline; }
+.btn-delete { color: #fff; background: #e84610; }
+.btn.btn-edit { background: linear-gradient(180deg, #bd069f, #8a046f); color: #ffffff; border: none; border-radius: 8px; padding: 0.45rem 0.9rem; box-shadow: 0 10px 28px rgba(189,6,159,0.12), 0 2px 8px rgba(0,0,0,0.35) inset; }
+.btn.btn-edit:hover, .btn.btn-edit:focus, .btn.btn-edit:active { background: #ffffff; color: #bd069f; }
+.btn.btn-delete { background: linear-gradient(180deg, #ff6b4a, #e84610); color: #ffffff; border: none; border-radius: 8px; padding: 0.45rem 0.85rem; box-shadow: 0 10px 30px rgba(232,70,16,0.12), 0 2px 8px rgba(0,0,0,0.35) inset; }
+.btn.btn-delete:hover, .btn.btn-delete:focus, .btn.btn-delete:active { background: #ffffff; color: #e84610; }
+
+/* --------------------
+   Modals
+   -------------------- */
+.modal-content { background: linear-gradient(180deg, rgba(4,12,20,0.72), rgba(6,18,30,0.62)); border: 1px solid rgba(127,190,255,0.06); color: #cfe9ff; }
+.modal-header .modal-title { color: #9fe3ff; }
+.modal-body { color: #cfe9ff; }
+.modal-footer .btn-secondary { background: transparent; color: #bfeaff; border: 1px solid rgba(191,234,255,0.06); }
+.modal-footer .btn-danger { background: linear-gradient(180deg, #ff6b4a, #e84610); color: #fff; border: none; }
+
+/* --------------------
+   Utilities
+   -------------------- */
+.approval { display: block; background: linear-gradient(180deg, rgba(189,6,159,0.12), rgba(80,180,255,0.02)); color: rgb(222,146,168); border-radius: 12px; border: 1px solid rgba(189,6,159,0.12); margin: 0 0 0.8rem 0; max-width: fit-content; }
+.faded { color: rgb(172,175,175); }
+.fa-comments, .far.fa-comments, .comment-count { color: #ffffff; }
+
+/* --------------------
+   Responsive
+   -------------------- */
 @media (max-width: 768px) {
     .reviews-index .card { max-width: none; margin: 0.5rem 0; }
 }
+
+/* End of cleaned style.css */
