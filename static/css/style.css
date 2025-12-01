@@ -10,17 +10,13 @@ body {
     color: #4a4a4f;
 }
 
-.red-o {
-    color: #e84610;
-}
+/* .red-o removed (unused) */
 
 .thin {
     font-weight: 300;
 }
 
-.light-bg {
-    background-color: #fff;
-}
+/* .light-bg removed (unused) */
 
 .dark-bg {
     background-color: #445261;
@@ -52,25 +48,6 @@ body {
     min-width: 30%;
     left: -2px;
     background-color: #0242a1;
-}
-
-.scale {
-    width: 100%;
-    height: auto;
-}
-
-/* Slightly smaller thumbnail images on the index page */
-.reviews-index .image-container .scale {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 6px;
-}
-
-@media (max-width: 576px) {
-    .reviews-index .image-container .scale {
-        height: 120px;
-    }
 }
 
 .genre {
@@ -191,12 +168,6 @@ body {
     text-decoration: underline;
 }
 
-.btn-like {
-    color: #e84610;
-    border: none;
-    background: transparent;
-}
-
 .btn-delete {
     color: #fff;
     background: #e84610;
@@ -265,13 +236,6 @@ body {
     border: 1px solid rgba(189,6,159,0.12);
     margin: 0 0 0.8rem 0;
     max-width: fit-content;
-}
-
-.btn-like:hover,
-.btn-like:active {
-    color: #e84610;
-    background: transparent;
-    border: none;
 }
 
 .faded {
