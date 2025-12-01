@@ -27,11 +27,10 @@ body {
 }
 
 .main-bg {
-    /* Layered dark navy background to match the screenshot */
     background-image:
-        linear-gradient(#071827 0%, #071827 12%, rgba(255,255,255,0.02) 12%, rgba(255,255,255,0.01) 13%),
-        radial-gradient(ellipse at 50% 8%, rgba(102,194,255,0.06), rgba(8,20,32,0.0) 30%),
-        linear-gradient(180deg, #021024 0%, #04172a 45%, #02121a 100%);
+        linear-gradient(#0b2230 0%, #071827 12%, rgba(255,255,255,0.03) 12%, rgba(255,255,255,0.02) 13%),
+        radial-gradient(ellipse at 50% 8%, rgba(102,194,255,0.09), rgba(8,20,32,0.0) 30%),
+        linear-gradient(180deg, #032235 0%, #052b3e 45%, #021827 100%);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -148,8 +147,8 @@ body {
 /* Navbar / header styling to blend with dark theme */
 .main-nav {
     /* Use a solid dark background so header is not transparent */
-    background: linear-gradient(90deg, #081a2b 0%, #0b2740 100%);
-    border-bottom: 1px solid rgba(127,190,255,0.04);
+    background: linear-gradient(90deg, #091f31 0%, #0d3046 100%);
+    border-bottom: 1px solid rgba(127,190,255,0.10);
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
 }
@@ -159,16 +158,16 @@ body {
     z-index: 999;
 }
 .site-brand {
-    color: #9fe3ff;
+    color: #c9f7ff;
     font-family: Lato, sans-serif;
     font-weight: 700;
     font-size: 1.3rem;
     text-shadow: 0 6px 18px rgba(80,180,255,0.04);
 }
-.site-brand .thin { font-weight: 300; color: #bfeaff; }
-.site-tagline { color: rgba(191,234,255,0.65); }
-.navbar-toggler { border-color: rgba(191,234,255,0.08); }
-.navbar-toggler-icon { filter: invert(0.9) brightness(1.2); }
+.site-brand .thin { font-weight: 300; color: #def8ff; }
+.site-tagline { color: rgba(191,234,255,0.85); }
+.navbar-toggler { border-color: rgba(255, 254, 254, 0.08); }
+.navbar-toggler-icon { filter: none; }
 
 .btn-signup {
     background-color: #188181;
@@ -314,7 +313,7 @@ body {
     padding-left: 10px;
 }
 .section-body {
-    color: #cfe9ff;
+    color: #e6fbff;
     line-height: 1.7;
 }
 .review-chip {
@@ -329,7 +328,7 @@ body {
 }
 
 /* Minor layout tweaks */
-.card-body { background: linear-gradient(180deg, rgba(6, 103, 240, 0.65), rgba(8,16,24,0.6)); border-radius: 10px; }
+.card-body { background: linear-gradient(180deg, rgba(6, 120, 255, 0.72), rgba(10,22,34,0.68)); border-radius: 10px; }
 .post-meta p { margin: 0 0 6px 0; }
 
 /* Make comment icons white to match the theme */
