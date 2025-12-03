@@ -176,5 +176,3 @@ body {
 @media (max-width: 768px) {
     .reviews-index .card { max-width: none; margin: 0.5rem 0; }
 }
-
-/* End of cleaned style.css */
