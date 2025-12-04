@@ -76,10 +76,14 @@ class PostList(generic.ListView):
             if Publisher:
                 pub = Publisher.objects.filter(slug=publisher_slug).first()
                 if pub:
-                    # match posts linked to publisher OR where developer text equals publisher name
-                    base_qs = base_qs.filter(Q(publishers=pub) | Q(developer__iexact=pub.name))
+                    # match posts linked to publisher
+                    # OR
+                    # where developer text equals publisher name
+                    base_qs = base_qs.filter(
+                        Q(publishers=pub)
+                        | Q(developer__iexact=pub.name))
                 else:
-                    # fallback: try matching developer text from slug (replace hyphens)
+                    # fallback: try matching developer text from slug
                     name_guess = publisher_slug.replace('-', ' ')
                     base_qs = base_qs.filter(developer__iexact=name_guess)
             else:
@@ -152,7 +156,9 @@ def comment_edit(request, slug, comment_id):
             comment.save()
             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+            messages.add_message(
+                request, messages.ERROR,
+                'Error updating comment!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
@@ -169,6 +175,8 @@ def comment_delete(request, slug, comment_id):
         comment.delete()
         messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+        messages.add_message(
+            request, messages.ERROR,
+            'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))

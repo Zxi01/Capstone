@@ -12,7 +12,9 @@ class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     description = models.TextField(blank=True, default="")
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE,
+        related_name="blog_posts")
     featured_image = CloudinaryField('image', default='placeholder')
     content = models.TextField(blank=True, default="")
     excerpt = models.TextField(blank=True)
@@ -27,8 +29,14 @@ class Post(models.Model):
     genre = models.JSONField(default=list, blank=True)
     rating = models.FloatField(null=True, blank=True)
     tags = models.JSONField(default=list, blank=True)
-    genres = models.ManyToManyField('genres.Genre', blank=True, related_name='posts')
-    publishers = models.ManyToManyField('publishers.Publisher', blank=True, related_name='posts')
+    genres = models.ManyToManyField(
+        'genres.Genre',
+        blank=True,
+        related_name='posts')
+    publishers = models.ManyToManyField(
+        'publishers.Publisher',
+        blank=True,
+        related_name='posts')
 
     class Meta:
         ordering = ["-created_on"]
