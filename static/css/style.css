@@ -94,25 +94,66 @@ body {
 /* --------------------
    Cards / Posts
    -------------------- */
+/* Card container */
 .card {
     border: none;
     background-color: transparent;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
 }
-.card-title { color: #ffffff; }
-.card-text  { color: #ffffff; }
+
+/* Card body with equal height */
+.card-body {
+    background: linear-gradient(180deg, rgba(6,120,255,0.72), rgba(10,22,34,0.68));
+    border-radius: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 320px; /* adjust if needed */
+    padding: 15px;
+}
+
+/* Uniform image height */
+.card-img-top {
+    height: 160px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Description truncation */
+.card-text {
+    color: #ffffff;
+    max-height: 4.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Title colour */
+.card-title {
+    color: #ffffff;
+}
+
+/* Link behaviour */
 .post-link { text-decoration: none; }
 .post-link:hover .card-title,
 .post-link:focus .card-title,
 .post-link:active .card-title,
 .post-link:hover .card-text,
 .post-link:focus .card-text,
-.post-link:active .card-text { color: #bd069f; }
+.post-link:active .card-text {
+    color: #bd069f;
+}
+
+/* Existing layout styles */
 .post-title { margin-top: 10%; margin-left: 5%; }
 .post-subtitle { margin-left: 5%; color: lightgray; }
 .image-container { position: relative; }
 .image-flash { position: absolute; bottom: 5%; min-width: 30%; left: -2px; background-color: #0242a1; }
 .genre { color: #ffffff; margin: 4px; text-transform: uppercase; }
-.card-body { background: linear-gradient(180deg, rgba(6,120,255,0.72), rgba(10,22,34,0.68)); border-radius: 10px; }
 .post-meta p { margin: 0 0 6px 0; }
 
 /* --------------------

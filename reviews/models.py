@@ -22,17 +22,23 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
-    # Add these extra fields to match your fixture
+    # RAWG API fields (required)
+    rawg_slug = models.SlugField(max_length=200, blank=True, null=True)
+    rawg_id = models.IntegerField(blank=True, null=True)
+
+    # Your existing game metadata fields
     developer = models.CharField(max_length=100, blank=True)
     release_date = models.DateField(null=True, blank=True)
     platforms = models.JSONField(default=list, blank=True)
     genre = models.JSONField(default=list, blank=True)
     rating = models.FloatField(null=True, blank=True)
     tags = models.JSONField(default=list, blank=True)
+
     genres = models.ManyToManyField(
         'genres.Genre',
         blank=True,
         related_name='posts')
+
     publishers = models.ManyToManyField(
         'publishers.Publisher',
         blank=True,

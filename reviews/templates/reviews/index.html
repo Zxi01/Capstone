@@ -13,12 +13,13 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top" src="{% static 'images/offline.jpg' %}"
-                                 alt="placeholder image">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
-                                {% endif %}
+                                {% if post.extra and post.extra.background_image %}
+    <img class="card-img-top" src="{{ post.extra.background_image }}" alt="{{ post.title }}">
+{% elif "placeholder" in post.featured_image.url %}
+    <img class="card-img-top" src="{% static 'images/offline.jpg' %}" alt="placeholder image">
+{% else %}
+    <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+{% endif %}
                                 <div class="image-flash">
                                     <p class="genre">
                                         Genre: {{ post.genre|cut:"`"|cut:"["|cut:"]"|cut:"'" }}
@@ -26,9 +27,17 @@
                                 </div>
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
-                            </a>
+    <h2 class="card-title">{{ post.title }}</h2>
+
+    {% if post.extra and post.extra.description_raw %}
+        <p class="card-text">{{ post.extra.description_raw|truncatewords:30 }}</p>
+    {% elif post.excerpt %}
+        <p class="card-text">{{ post.excerpt|truncatewords:30 }}</p>
+    {% else %}
+        <p class="card-text text-muted">No description available.</p>
+    {% endif %}
+</a>
+
 
                             <hr>
                             <p class="card-text text-muted h6">
